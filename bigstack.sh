@@ -83,7 +83,7 @@ echo "Editing Environment Variable !! \n"
 
 if [ -e $BASHRCLOC ]; then
 	echo " Editing file"
-	echo "export JAVA_HOME=dirname $(readlink /etc/alternatives/java) | sed -r 's/(.*)\/jre.*/\1/'" | sudo tee -a ~/.bashrc
+#	echo "export JAVA_HOME=dirname $(readlink /etc/alternatives/java) | sed -r 's/(.*)\/jre.*/\1/'" | sudo tee -a ~/.bashrc
 	echo "export HADOOP_HOME=/usr/local/hadoop" | sudo tee -a ~/.bashrc
 	echo "export HADOOP_INSTALL=/usr/local/hadoop" | sudo tee -a ~/.bashrc
 	echo "export HADOOP_PREFIX=/usr/local/hadoop" | sudo tee -a ~/.bashrc
@@ -96,12 +96,12 @@ if [ -e $BASHRCLOC ]; then
 	echo "export HADOOP_HDFS_HOME=/usr/local/hadoop" | sudo tee -a ~/.bashrc
 	echo "export YARN_HOME=/usr/local/hadoop" | sudo tee -a ~/.bashrc
 	echo "export PATH=$PATH:/usr/local/hadoop/bin:/usr/local/hadoop/sbin" | sudo tee -a ~/.bashrc
-	
+	sudo exec ~/.bashrc 
 fi
 if [ -e /etc/bash.bashrc ]; then
 
 	echo " Editing file"
-	echo "export JAVA_HOME=dirname $(readlink /etc/alternatives/java) | sed -r 's/(.*)\/jre.*/\1/'" | sudo tee -a /etc/bash.bashrc
+#	echo "export JAVA_HOME=dirname $(readlink /etc/alternatives/java) | sed -r 's/(.*)\/jre.*/\1/'" | sudo tee -a /etc/bash.bashrc
 	echo "export HADOOP_HOME=/usr/local/hadoop" | sudo tee -a /etc/bash.bashrc
 	echo "export HADOOP_INSTALL=/usr/local/hadoop" | sudo tee -a /etc/bash.bashrc
 	echo "export HADOOP_PREFIX=/usr/local/hadoop" | sudo tee -a /etc/bash.bashrc
