@@ -83,6 +83,7 @@ echo "Editing Environment Variable !! \n"
 
 if [ -e $BASHRCLOC ]; then
 	echo " Editing file"
+	echo "export JAVA_HOME=/usr/lib/jvm/java-7-openjdk-amd64" | sudo tee -a ~/.bashrc
 #	echo "export JAVA_HOME=dirname $(readlink /etc/alternatives/java) | sed -r 's/(.*)\/jre.*/\1/'" | sudo tee -a ~/.bashrc
 	echo "export HADOOP_HOME=/usr/local/hadoop" | sudo tee -a ~/.bashrc
 	echo "export HADOOP_INSTALL=/usr/local/hadoop" | sudo tee -a ~/.bashrc
@@ -101,6 +102,7 @@ fi
 if [ -e /etc/bash.bashrc ]; then
 
 	echo " Editing file"
+	echo "export JAVA_HOME=/usr/lib/jvm/java-7-openjdk-amd64" | sudo tee -a ~/.bashrc
 #	echo "export JAVA_HOME=dirname $(readlink /etc/alternatives/java) | sed -r 's/(.*)\/jre.*/\1/'" | sudo tee -a /etc/bash.bashrc
 	echo "export HADOOP_HOME=/usr/local/hadoop" | sudo tee -a /etc/bash.bashrc
 	echo "export HADOOP_INSTALL=/usr/local/hadoop" | sudo tee -a /etc/bash.bashrc
